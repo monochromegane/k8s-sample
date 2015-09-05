@@ -18,6 +18,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  config.vm.define 'k8s-minion-1' do |node|
+    node.vm.hostname = "k8s-minion-1"
+    node.vm.network :private_network, ip: "172.16.1.11"
+    set_vbox(node)
+
+    config.vm.provision :itamae do |itamae|
+      itamae.sudo = true
+      itamae.recipes = ['./itamae/roles/minion.rb']
+    end
+  end
+
   config.plugin.add_dependency 'itamae-plugin-recipe-selinux'
 
   def set_vbox(node)
