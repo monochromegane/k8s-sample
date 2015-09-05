@@ -1,8 +1,7 @@
-include_recipe "../cookbooks/selinux/disabled.rb"
-include_recipe "../cookbooks/firewalld/stop_and_disable.rb"
-include_recipe "../cookbooks/ntp/default.rb"
+include_recipe 'selinux::disabled'
+include_recipe '../cookbooks/firewalld/service.rb'
+include_recipe '../cookbooks/ntp/default.rb'
 
-include_recipe "../cookbooks/etcd/default.rb"
-include_recipe "../cookbooks/kubernetes/default.rb"
-include_recipe "../cookbooks/kubernetes/start_and_enable_master_service.rb"
-include_recipe "../cookbooks/etcd/define_flannel_config.rb"
+include_recipe '../cookbooks/etcd/default.rb'
+include_recipe '../cookbooks/kubernetes/default.rb'
+include_recipe '../cookbooks/kubernetes/master/service.rb'
