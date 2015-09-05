@@ -1,3 +1,5 @@
+template '/etc/kubernetes/apiserver'
+
 service 'kube-apiserver' do
   action [:start, :enable]
 end

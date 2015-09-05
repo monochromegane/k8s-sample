@@ -4,4 +4,4 @@ include_recipe '../cookbooks/ntp/default.rb'
 
 include_recipe '../cookbooks/etcd/default.rb'
 include_recipe '../cookbooks/kubernetes/default.rb'
-include_recipe '../cookbooks/kubernetes/master/service.rb'
+include_recipe '../cookbooks/kubernetes/master/default.rb'
