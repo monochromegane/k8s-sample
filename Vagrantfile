@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define 'k8s-master' do |node|
     node.vm.hostname = "k8s-master"
     node.vm.network :private_network, ip: "172.16.1.10"
+    config.vm.network :forwarded_port, host: 8080, guest: 8080
     set_vbox(node)
 
     config.vm.provision :itamae do |itamae|
