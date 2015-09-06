@@ -1,3 +1,5 @@
+package 'git'
+
 template '/etc/kubernetes/config' do
   variables(kube_master: 'http://172.16.1.10:8080')
 end
